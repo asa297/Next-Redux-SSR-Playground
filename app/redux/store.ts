@@ -1,18 +1,21 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore,  getDefaultMiddleware} from '@reduxjs/toolkit'
 import { useMemo } from 'react'
 import { RootReducer} from '@app/modules/root-reducer'
 import deepmerge from 'deepmerge'
+import { logger } from 'redux-logger'
 
 let store: ReturnType<typeof initStore>
 
+const isProdEnv = process.env.NODE_ENV === 'production'
+const isServer = typeof window === 'undefined'
+
 function initStore(preloadedState: any) {
+    const middlewares = (!isProdEnv && !isServer) ? [...getDefaultMiddleware({ serializableCheck : false }).concat(logger)] : [...getDefaultMiddleware({ serializableCheck : false })]
     return configureStore({
         reducer: RootReducer,
         devTools: process.env.NODE_ENV !== 'production',
         preloadedState,
-        middleware: getDefaultMiddleware({
-            serializableCheck: false, // hide warning about non-serializable date objects on SSR
-        }),
+        middleware: middlewares
     })
 }
 export const initializeStore = (preloadedState = {}) => {

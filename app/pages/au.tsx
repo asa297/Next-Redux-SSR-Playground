@@ -1,10 +1,15 @@
 import React from 'react'
 import { NextPage } from "next"
+import Link from 'next/link'
 
 const Au: NextPage = () => {
   return (
     <div>
-      Au
+      <Link href='/'>
+        <a>
+          Home
+        </a>
+      </Link>
     </div>
   ) 
 }
