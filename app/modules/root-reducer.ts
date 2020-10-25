@@ -1,4 +1,7 @@
 import { combineReducers } from 'redux'
 
-export const rootReducer = combineReducers({
+import { ExampleSlice } from '@app/modules/example/slice'
+
+export const RootReducer = combineReducers({
+    [ExampleSlice.name]: ExampleSlice.reducer,
 })
