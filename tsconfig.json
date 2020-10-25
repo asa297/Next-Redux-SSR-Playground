@@ -25,6 +25,6 @@
       "skipLibCheck": true,
       "downlevelIteration": true
   },
-  "include": ["./app/**/*.ts", "./app/**/*.tsx"],
+  "include": ["./**/*.d.ts", "./app/**/*.ts", "./app/**/*.tsx"],
   "exclude": [".next", "build", "node_modules"]
 }

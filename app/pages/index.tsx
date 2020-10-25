@@ -1,8 +1,14 @@
+import React from 'react'
 import { NextPage, NextPageContext } from "next"
+import { Card } from '@app/components/card'
 
 
 const IndexPage: NextPage = () => {
-  return <div>IndexPage</div>
+  return (
+    <div>IndexPage
+      <Card/>
+    </div>
+  ) 
 }
 
 IndexPage.getInitialProps = (ctx : NextPageContext) => {

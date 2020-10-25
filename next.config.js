@@ -3,7 +3,6 @@ require('dotenv').config()
 const path = require('path')
 const withCustomBabelConfig = require('next-plugin-custom-babel-config')
 const withPlugins = require('next-compose-plugins')
-const withLess = require('@zeit/next-less')
 const withImages = require('next-images')
 
 function withCustomWebpack(config = {}) {
@@ -34,14 +33,6 @@ function withCustomWebpack(config = {}) {
 
 const plugins = [
     [withImages],
-    [
-        withLess,
-        {
-            lessLoaderOptions: {
-                javascriptEnabled: true,
-            },
-        },
-    ],
     [
         withCustomBabelConfig,
         {

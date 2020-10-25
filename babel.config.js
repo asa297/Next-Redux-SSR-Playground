@@ -5,7 +5,7 @@ module.exports = function (api) {
 
     const plugins = [
         [
-            'module-resolver',
+            'babel-plugin-module-resolver',
             {
                 root: ['./'],
                 alias: {
