@@ -1,0 +1,31 @@
+module.exports = function (api) {
+    api.cache(true)
+
+    const presets = ['next/babel']
+
+    const plugins = [
+        [
+            'module-resolver',
+            {
+                root: ['./'],
+                alias: {
+                    '@app': './app',
+                    '@app/@server': './server',
+                },
+            },
+        ],
+        [
+            'styled-components',
+            {
+                ssr: true,
+                displayName: true,
+                preprocess: false,
+            },
+        ],
+    ]
+
+    return {
+        presets,
+        plugins,
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "outDir": "./build",
+      "paths": {
+          "@app/*": ["./app/*"],
+          "@app/server/*": ["./server/*"]
+      },
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": false,
+      "experimentalDecorators": true,
+      "jsx": "react",
+      "lib": ["dom", "esnext"],
+      "module": "esnext",
+      "moduleResolution": "node",
+      "removeComments": true,
+      "sourceMap": true,
+      "target": "esnext",
+      "types": ["node"],
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "preserveConstEnums": true,
+      "skipLibCheck": true,
+      "downlevelIteration": true
+  },
+  "include": ["./app/**/*.ts", "./app/**/*.tsx"],
+  "exclude": [".next", "build", "node_modules"]
+}

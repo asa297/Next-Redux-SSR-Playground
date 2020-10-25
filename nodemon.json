@@ -1,0 +1,14 @@
+{
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "execMap": {
+        "js": "node --harmony",
+        "ts": "ts-node --project tsconfig.server.json"
+    },
+    "ext": "ts,js,json",
+    "ignore": [".git", "node_modules/**/node_modules"],
+    "restartable": "rs",
+    "verbose": true,
+    "watch": ["server/**/*.ts", "next.config.js"]
+}
